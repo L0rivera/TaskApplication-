@@ -1,4 +1,11 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* El resto del código de este archivo contenía estilos CSS tradicionales que 
+   reemplazaban o entraban en conflicto con el reinicio de Tailwind (Preflight) 
+   y las clases que se intentan aplicar. Es mejor eliminarlos o reescribirlos 
+   como componentes o utilidades personalizadas. */
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -26,10 +33,10 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  /* Se eliminó 'display: flex;' y 'place-items: center;' para evitar conflictos 
+     con el diseño de la placa (Board) y permitir que ocupe todo el espacio. */
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100vh; /* Se mantiene para que el cuerpo del documento ocupe la altura total */
 }
 
 h1 {
