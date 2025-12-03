@@ -21,39 +21,54 @@ export default function Login() {
   };
 
   return (
-    <div className="w-full h-screen flex items-center justify-center bg-gray-100">
+    <div className="w-full h-screen flex items-center justify-center bg-gradient-to-br from-blue-500 to-blue-700">
       <form
         onSubmit={handleSubmit}
-        className="bg-white shadow-md p-6 rounded-lg w-80"
+        className="bg-white shadow-2xl p-8 rounded-xl w-96 space-y-5"
       >
-        <h2 className="text-xl font-bold mb-4">Login</h2>
+        <div className="text-center mb-6">
+          <h2 className="text-3xl font-bold text-gray-800">Bienvenido</h2>
+          <p className="text-gray-500 text-sm mt-2">Inicia sesión en tu cuenta</p>
+        </div>
+
+        // ...existing code...
 
         <input
           type="email"
           placeholder="Email"
-          className="w-full p-2 border mb-3 rounded"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition text-black placeholder-gray-400"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
         />
 
         <input
           type="password"
-          placeholder="Password"
-          className="w-full p-2 border mb-3 rounded"
+          placeholder="Contraseña"
+          className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 transition text-black placeholder-gray-400"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
+          required
         />
 
+// ...existing code...
+
         {error && (
-          <p className="text-red-500 text-sm mb-3">{error}</p>
+          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-lg text-sm">
+            {error}
+          </div>
         )}
 
         <button
           type="submit"
-          className="w-full bg-blue-600 text-white py-2 rounded"
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-200 transform hover:scale-105"
         >
           Entrar
         </button>
+
+        <p className="text-center text-gray-600 text-sm">
+          ¿No tienes cuenta? <span className="text-blue-600 font-semibold cursor-pointer hover:underline">Regístrate</span>
+        </p>
       </form>
     </div>
   );

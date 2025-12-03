@@ -1,7 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
+@import "tailwindcss";
 /* El resto del código de este archivo contenía estilos CSS tradicionales que 
    reemplazaban o entraban en conflicto con el reinicio de Tailwind (Preflight) 
    y las clases que se intentan aplicar. Es mejor eliminarlos o reescribirlos 
