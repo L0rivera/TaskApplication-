@@ -15,13 +15,22 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+import cors from "cors";
+
+app.use(cors({
+  origin: "*",
+  credentials: true
+}));
+
+
 // Servidor HTTP
 const httpServer = createServer(app);
 
 // Socket.IO
 const io = new Server(httpServer, {
   cors: {
-    origin: "*"
+    origin: "*",
+    methods: ["GET", "POST"]
   }
 });
 
