@@ -50,7 +50,7 @@ io.on("connection", (socket) => {
 });
 
 // Iniciar servidor
-const PORT = 4000;
+const PORT = 10000;
 httpServer.listen(PORT, () => {
   console.log("Servidor corriendo en puerto", PORT);
 });
